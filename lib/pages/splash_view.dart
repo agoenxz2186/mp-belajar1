@@ -6,12 +6,31 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Selamat datang'),
-      ),
-      body: Center(
-        child: Text('Hello world'),
-      ),
-    );
+        appBar: AppBar(
+          title: const Text('Selamat datang'),
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text('Nama'),
+                  const TextField(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text('Alamat'),
+                  const TextField(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Align(
+                      alignment: Alignment.centerRight,
+                      child: ElevatedButton(
+                          onPressed: () {}, child: const Text('Ok')))
+                ],
+              )),
+        ));
   }
 }
